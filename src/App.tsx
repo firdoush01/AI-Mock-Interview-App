@@ -1,10 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import PublicLayout from "@/layout/public-layout"
 import HomePage from "@/routes/home"
 import AuthenticationLayout from "./layout/auth-layout"
+import { PublicLayout } from "./layout/public-layout"
 import { SignInPage } from "./routes/sign-in"
 import { SignUpPage } from "./routes/sign-up"
-function App() {
+import ProtectedRoutes from "./layout/protected-routes"
+import { MainLayout } from "@/layout/main-layout"
+const App = () =>{
   return (
     <Router>
       <Routes>
@@ -20,6 +22,11 @@ function App() {
         </Route>
 
         {/*protected routes*/}
+        <Route element={<ProtectedRoutes>
+          <MainLayout/>
+          </ProtectedRoutes>} >
+{/* {add all the protected routes} */}
+        </Route>
       </Routes>
     </Router>
   )
