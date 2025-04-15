@@ -12,9 +12,16 @@ export const HomePage = () => {
       <Container>
         <div className="my-8">
           <h2 className="text-3xl text-center md:text-left md:text-6xl">
-            <span className=" text-outline font-extrabold md:text-8xl">
-              AI Superpower
-            </span>
+          <span
+  className="font-extrabold md:text-8xl text-white"
+  style={{
+    WebkitTextStroke: "2px black",
+    color: "white",
+  }}
+>
+  AI Superpower
+</span>
+
             <span className="text-gray-500 font-extrabold">
               - A better way to
             </span>
@@ -48,7 +55,7 @@ export const HomePage = () => {
 
         <div className="w-full mt-4 rounded-xl bg-gray-100 h-[420px] drop-shadow-md overflow-hidden relative">
           <img
-            src="/img/hero.jpg"
+            src="assets/img/hero.jpg"
             alt=""
             className="w-full h-full object-cover"
           />

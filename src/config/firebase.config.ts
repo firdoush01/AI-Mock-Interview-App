@@ -9,8 +9,11 @@ const firebaseConfig = {
   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
+console.log("Project ID:", import.meta.env.VITE_FIREBASE_PROJECT_ID);
 
-const app = getApps.length > 0 ? getApp() : initializeApp(firebaseConfig);
+// const app = getApps.length > 0 ? getApp() : initializeApp(firebaseConfig);
+const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
+
 
 const db = getFirestore(app);
 
