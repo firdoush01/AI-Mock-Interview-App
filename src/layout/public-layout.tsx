@@ -1,22 +1,17 @@
-import Header from "@/components/header";
-import Footer from "@/components/footer";
+import {Header} from "@/components/header";
+import {Footer} from "@/components/footer";
 import { Outlet } from "react-router-dom";
-import { Container } from "lucide-react";
+import AuthHandler from "@/handlers/user-auth-handler";
 
-export const PublicLayout = () =>{
+
+export const PublicLayout = () => {
   return (
-    <div className="flex flex-col h-screen">
+    <div className="w-full">
       {/* {handler to store the user data} */}
-      <Header />
-
-      <Container className="flex-grow">
-        <main className="flex-grow">
-          <Outlet />
-        </main>
-      </Container>
-
+      <AuthHandler />
+      <Header /> Loading...
+      <Outlet />
       <Footer />
     </div>
   );
-}
-
+};
